@@ -79,6 +79,9 @@ export class CallbackCell {
     this.values = [];
   }
 
+  /* update the values of the ComputeCell after InputCell's value(s) 
+  *  have been updated or modified after first call of ComputeCell
+  */
   updateValue(value) {
     if (value !== this.value) {
       this.callback(this);
