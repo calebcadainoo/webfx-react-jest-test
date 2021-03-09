@@ -5,9 +5,7 @@ export class InputCell {
   }
 
   setValue(value) {
-    throw new Error(
-      'Remove this statement and implement this function'
-    );
+    this.value = value;
   }
 }
 
