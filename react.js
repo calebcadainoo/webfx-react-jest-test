@@ -26,6 +26,7 @@ export class InputCell {
     this.outputCells.push(cell);
   }
   
+  // calculate the values of the updated or modified cell values
   calculateNewValues() {
     this.callbackCells.forEach((cell) => {
       cell.updateValue(this.value);
