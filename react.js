@@ -11,8 +11,8 @@ export class InputCell {
 
 export class ComputeCell {
   constructor(inputCells = [], fn) {
-    this.inputCells = inputCells
-    this.value = fn(this.inputCells)
+    this.inputCells = inputCells;
+    this.value = fn(this.inputCells);
   }
 
   addCallback(cb) {
