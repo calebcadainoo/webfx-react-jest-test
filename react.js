@@ -10,10 +10,9 @@ export class InputCell {
 }
 
 export class ComputeCell {
-  constructor(inputCells, fn) {
-    throw new Error(
-      'Remove this statement and implement this function'
-    );
+  constructor(inputCells = [], fn) {
+    this.inputCells = inputCells
+    this.value = fn(this.inputCells)
   }
 
   addCallback(cb) {
