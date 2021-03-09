@@ -67,7 +67,7 @@ describe('React module', () => {
     expect(sum.value).toEqual(96);
   });
 
-  xtest('compute cells fire callbacks', () => {
+  test('compute cells fire callbacks', () => {
     const inputCell = new InputCell(1);
     const output = new ComputeCell(
       [inputCell],

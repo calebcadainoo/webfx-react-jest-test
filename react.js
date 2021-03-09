@@ -26,7 +26,7 @@ export class InputCell {
     this.outputCells.push(cell);
   }
   
-  // calculate the values of the updated or modified cell values
+  /* calculate the values of the updated or modified cell values */
   calculateNewValues() {
     this.callbackCells.forEach((cell) => {
       cell.updateValue(this.value);
@@ -49,6 +49,9 @@ export class ComputeCell extends InputCell {
     allStoredCells.push(this);
   }
 
+  /* calculate most recent values, this will help curb incidents 
+  * of the InputCell value being updated or modified after the first call
+  */
   getNewValue() {
     this.value = this.fn(this.inputCells);
     this.outputCells.forEach((cell) => {
@@ -56,17 +59,10 @@ export class ComputeCell extends InputCell {
     });
   }
 
-  set updateValue(value) {
-    if (value !== this.value) {
-      this.values.push(value);
-      this.value = value;
-    }
-  }
-
+  /* append specified callback to callbackCells */
   addCallback(cb) {
-    throw new Error(
-      'Remove this statement and implement this function'
-    );
+    this.callbackCells.push(cb);
+    cb.initValue(this.value);
   }
 
   removeCallback(cb) {
@@ -78,8 +74,21 @@ export class ComputeCell extends InputCell {
 
 export class CallbackCell {
   constructor(fn) {
-    throw new Error(
-      'Remove this statement and implement this function'
-    );
+    this.callback = fn;
+    this.value;
+    this.values = [];
+  }
+
+  updateValue(value) {
+    if (value !== this.value) {
+      this.callback(this);
+      this.values.push(value);
+      this.value = value;
+    }
+  }
+
+  /* set initial value of the InputCell after first call */
+  initValue(value) {
+    this.value = value;
   }
 }
