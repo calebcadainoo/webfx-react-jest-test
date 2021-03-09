@@ -144,7 +144,7 @@ describe('React module', () => {
     expect(callback3.values).toEqual([42]);
   });
 
-  xtest('removing a callback multiple times doesn\'t interfere with other callbacks', () => {
+  test('removing a callback multiple times doesn\'t interfere with other callbacks', () => {
     const inputCell = new InputCell(1);
     const output = new ComputeCell(
       [inputCell],

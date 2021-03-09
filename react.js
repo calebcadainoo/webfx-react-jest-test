@@ -90,7 +90,7 @@ export class CallbackCell {
       /* if return type of callback funtion is a string, push the string
       *  value into the values array if not, push the default numbers or values
       */
-      if (typeof this.callback(this) === "string") {
+      if (typeof this.callback(this) === 'string') {
         this.values.push(this.callback(this));
       } else {
         this.values.push(value);
