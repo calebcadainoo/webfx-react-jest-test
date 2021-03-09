@@ -197,7 +197,7 @@ describe('React module', () => {
     expect(callback1.values).toEqual([10]);
   });
 
-  xtest('callbacks should not be called if dependencies change but output value doesn\'t change', () => {
+  test('callbacks should not be called if dependencies change but output value doesn\'t change', () => {
     const inputCell = new InputCell(1);
     const plusOne = new ComputeCell(
       [inputCell],
