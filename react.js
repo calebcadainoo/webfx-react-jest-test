@@ -45,7 +45,9 @@ export class ComputeCell extends InputCell {
       cell.updateOutput(this);
     });
 
+    // get updated values of compute cells
     this.getNewValue();
+    // add object to global cells array
     allStoredCells.push(this);
   }
 
