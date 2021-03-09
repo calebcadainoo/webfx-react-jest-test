@@ -1,9 +1,7 @@
 
 export class InputCell {
   constructor(value) {
-    throw new Error(
-      'Remove this statement and implement this function'
-    );
+    this.value = value;
   }
 
   setValue(value) {
