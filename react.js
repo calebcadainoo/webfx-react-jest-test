@@ -65,10 +65,11 @@ export class ComputeCell extends InputCell {
     cb.initValue(this.value);
   }
 
+  /* filter out the specified callback from the 
+  * callbackCells and return the rest
+  */
   removeCallback(cb) {
-    throw new Error(
-      'Remove this statement and implement this function'
-    );
+    this.callbackCells = this.callbackCells.filter(c => c !== cb);
   }
 }
 

@@ -117,7 +117,7 @@ describe('React module', () => {
     expect(callback.values).toEqual(["cell changed","cell changed","cell changed"]);
   });
 
-  xtest('callbacks can be added and removed', () => {
+  test('callbacks can be added and removed', () => {
     const inputCell = new InputCell(1);
     const output = new ComputeCell(
       [inputCell],
