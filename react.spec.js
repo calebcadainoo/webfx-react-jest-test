@@ -167,7 +167,7 @@ describe('React module', () => {
     expect(callback2.values).toEqual([3]);
   });
 
-  xtest('callbacks should only be called once, even if multiple dependencies change', () => {
+  test('callbacks should only be called once, even if multiple dependencies change', () => {
     const inputCell = new InputCell(1);
     const plusOne = new ComputeCell(
       [inputCell],
