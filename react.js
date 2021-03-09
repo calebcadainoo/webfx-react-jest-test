@@ -1,26 +1,31 @@
+/* this array will be used as a global store house for cell values */
 const allStoredCells = [];
 
 export class InputCell {
   constructor(value) {
     this.value = value;
+    // this outputCells will be used to show calculated values to the user
     this.outputCells = [];
   }
 
+  /* this method will be used to update the value of InputCell */
   setValue(value) {
     this.value = value;
     this.outputCells.forEach((cell) => {
       cell.getNewValue();
     });
-
+    
+    // push new value set into the global store array for later referencing
     allStoredCells.forEach((storedCell) => {
       storedCell.calculateNewValues();
     });
   }
 
+  /* update cell values for the output cell array */
   updateOutput(cell) {
     this.outputCells.push(cell);
   }
-
+  
   calculateNewValues() {
     this.callbackCells.forEach((cell) => {
       cell.updateValue(this.value);
